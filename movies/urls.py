@@ -8,4 +8,5 @@ urlpatterns=[
     url('login/', auth_views.LoginView.as_view(), name='login'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'profile/', views.profile, name='profile'),
+    url(r'movies/', views.movies, name='movies'),
 ]

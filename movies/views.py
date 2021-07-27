@@ -7,10 +7,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+
 def index(request):
+ 
+    return render(request, 'index.html')
+
+@login_required(login_url='/accounts/login/')
+def movies(request):
     allMovies = Movie.objects.all()
-    return render(request, 'index.html', {'allMovies':allMovies})
+    return render(request, 'movies.html', {'allMovies':allMovies})
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
