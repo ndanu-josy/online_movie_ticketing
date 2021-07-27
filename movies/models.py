@@ -35,6 +35,7 @@ class Movie(models.Model):
     name = models.CharField(max_length=30)
     poster = CloudinaryField('imageposter')
     description = models.CharField(max_length=500)
+    theatre = models.ForeignKey(Theatre, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

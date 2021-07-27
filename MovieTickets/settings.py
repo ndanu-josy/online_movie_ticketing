@@ -12,6 +12,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config(
+  cloud_name = "jos254",
+  api_key = "888584575498376",
+  api_secret = "jS8SX99ro6Cecs2oUxLshigg5ug",
+  secure = True
+)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -80,7 +91,7 @@ WSGI_APPLICATION = 'MovieTickets.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'movieticketing',
+        'NAME': 'moovieticketing',
         'USER': 'moringa',
         'PASSWORD':'josie',
     }

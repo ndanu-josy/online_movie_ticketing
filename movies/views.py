@@ -1,3 +1,4 @@
+from movies.models import Movie
 from movies.forms import RegistrationForm
 from django.contrib.auth import login
 from django.shortcuts import get_object_or_404, render
@@ -8,8 +9,8 @@ from django.contrib import messages
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def index(request):
-   
-    return render(request, 'index.html',)
+    allMovies = Movie.objects.all()
+    return render(request, 'index.html', {'allMovies':allMovies})
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
