@@ -38,3 +38,6 @@ def register(request):
     else:
         form= RegistrationForm()
     return render(request, 'registration/registration_form.html', {"form":form})     
+
+def movie_details(request, id):
+    return render(request, "movie_details.html", {"movie": Movie.objects.get(id=id)})
