@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Simple Navbar with Search Box</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	body {
+		background: #eeeeee;
+		font-family: 'Open Sans', sans-serif;
+	}
+    .form-inline {
+        display: inline-block;
+    }
+	.navbar {
+		font-size: 14px;
+		background: #fff;
+		padding-left: 16px;
+		padding-right: 16px;
+		border-bottom: 1px solid #d6d6d6;
+		box-shadow: 0 0 4px rgba(0,0,0,.1);		
+	}
+	.navbar .navbar-brand {
+		color: #555;
+		padding-left: 0;
+		font-size: 20px;
+		padding-right: 50px;
+		font-family: 'Raleway', sans-serif;
+		text-transform: uppercase;
+	}
+	.navbar .navbar-brand b {
+		font-weight: bold;
+		color: goldenrod;
+	}
+	.navbar ul.nav li {
+		font-size: 96%;
+		font-weight: bold;		
+		text-transform: uppercase;
+	}
+	
+	.search-box {
+        position: relative;
+    }
+	.search-box input.form-control, .search-box .btn {
+		font-size: 14px;
+		border-radius: 2px !important;
+	}
+	.search-box .input-group-btn {
+		padding-left: 4px;		
+	}
+	
+	
+	.search-box .btn span {
+		transform: scale(0.9);
+		display: inline-block;
+	}
+	.navbar ul li i {
+		font-size: 18px;
+	}
+	.navbar .dropdown-menu i {
+		font-size: 16px;
+		min-width: 22px;
+	}
+	.navbar .dropdown.open > a {
+		background: none !important;
+	}
+	.navbar .dropdown-menu {
+		border-radius: 1px;
+		border-color: #e5e5e5;
+		box-shadow: 0 2px 8px rgba(0,0,0,.05);
+	}
+	.navbar .dropdown-menu li a {
+		color: #777;
+		padding: 8px 20px;
+		line-height: normal;
+		font-size: 14px;
+	}
+	.navbar .dropdown-menu li a:hover, .navbar .dropdown-menu li a:active {
+		color: #333;
+	}
+	.navbar .navbar-form {
+		border: none;
+	}
+	@media (min-width: 992px){
+		.form-inline .input-group .form-control {
+			width: 225px;			
+		}
+	}
+	@media (max-width: 992px){
+		.form-inline {
+			display: block;
+		}
+	}
+</style>
+</head> 
+<body>
+<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+	<div class="navbar-header">
+    <a href="/"><img style="height: 50px;" src="data:image/jpeg;base64,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" /></a>  
+			
+     
+	 		
+		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+			<span class="navbar-toggler-icon"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+
+	<div id="navbarCollapse" class="collapse navbar-collapse">
+	
+			
+   
+	
+    <div class="col-sm-6 col-md-3 navbar-right " style="padding-right: 100px; padding-top: 10px;">
+      {% if user.is_authenticated %}
+
+      <a href="/"><img src="https://img.icons8.com/material-rounded/24/000000/home.png" /></a>  
+			
+     
+         
+      <a href="/profile"><img src="https://img.icons8.com/material-outlined/24/000000/user--v1.png"/></a>
+      <a class="glyphicon glyphicon-log-out glyph" href="/logout">Logout</a>
+      {% else %}
+      <a class="glyphicon glyphicon-log-in glyph" href="/accounts/login">Login</a>
+      <a class='btn btn-default' href="/accounts/register">Register</a>
+      {% endif %}
+    </div>
+		<form class="navbar-form form-inline navbar-center ml-auto" action="/" style="padding-left: 200px;">
+			<div class="input-group search-box">
+				<input type="text" class="form-control" name="business" placeholder="Search business"> 
+				<span class="input-group-btn">
+					<button type="submit" class="btn " style="background-color:#001d3d; color: goldenrod; "><span>Search</span></button>
+				</span>
+			</div>
+		</form>		
+	</div>
+</nav>
+</body>
+</html> 
