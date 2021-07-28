@@ -5,11 +5,11 @@
 
 
 <div class="boxContainer">
-    {%for movie in allMovies %}
+    {%for show in shows %}
         <div class="box">
             <div class="glass"></div>
             <div class="col-md-3" style="height: 200px;">
-                <a href="{%url 'movieDetails' movie.id%}"><img src="{{ movie.poster.url }}" style="width: 100%; height: 200px;" alt="movie"></a>
+                <a href="{%url 'showDetails' show.id%}"><img src="{{ show.poster.url }}" style="width: 100%; height: 200px;" alt="movie"></a>
             </div>
         </div>
     {% endfor %}
