@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('movies.urls')),
     url(r'^logout/$', views.LogoutView.as_view(), {"next_page": '/'}),
+   
 ]

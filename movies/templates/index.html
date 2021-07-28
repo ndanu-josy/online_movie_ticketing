@@ -4,10 +4,31 @@
 
 
 <div class="container-fluid" style="background-image: url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdmllJTIwdGhlYXRyZSUyMHNlYXRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
-background-repeat: no-repeat; background-position: center center; background-size: cover; height: 90vh;" >
-<a href="{%url 'movies'%}" class="btn btn-default">Get Started</a>
+background-repeat: no-repeat; background-position: center center; background-size: cover; height: 50vh;">
+    <div class="jumbotron text-center" style="background: transparent; height: 40vh;">
+        <h1 style="color: #d68c45;">Movie Plus </h1>
+        <h2 style="color: white;">Watch all the latest movies/series</h2>
+        <h2 style="color: white;">All in One Place</h2>
+        <a href="{%url 'movies'%}" class="btn btn-primary">Get Started</a>
+    </div>
+
 </div>
+<div class="container-fluid" style="
+ height: 50vh; margin-top: 5vh;">
+  
+    <div class="col-md-3" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOS8SMukWPn33_N0Y7cOX3Gj2rwslM3EpLA&usqp=CAU');
+background-repeat: no-repeat; background-position: center center; background-size: cover; width: 100%; height: 40vh; margin-left: 40px;">
 
-{%endblock%}
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3" style="background-image: url('https://images.pexels.com/photos/7991369/pexels-photo-7991369.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+background-repeat: no-repeat; background-position: center center; background-size: cover; width: 100%; height: 40vh;">
 
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3" style="background-image: url('https://images.pexels.com/photos/1182127/pexels-photo-1182127.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+background-repeat: no-repeat; background-position: center center; background-size: cover; width: 100%; height: 40vh;">
 
+    </div>
+    <div class="col-md-1"></div>
+    {%endblock%}
