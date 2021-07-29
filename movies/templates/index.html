@@ -1,12 +1,14 @@
 {%extends 'base.html'%}
 {%load bootstrap3%}
 {%block content%}
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 
 <div class="container-fluid" style="background-image: url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdmllJTIwdGhlYXRyZSUyMHNlYXRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
 background-repeat: no-repeat; background-position: center center; background-size: cover; height: 50vh;">
     <div class="jumbotron text-center" style="background: transparent; height: 40vh;">
-        <h1 style="color: #d68c45;">Movie Plus </h1>
+        <h1 style="color: #d68c45; font-family: 'Gloria Hallelujah', cursive; font-size: 70pt;">Movie Plus </h1>
         <h2 style="color: white;">Watch all the latest movies/series</h2>
         <h2 style="color: white;">All in One Place</h2>
         <a href="{%url 'movies'%}" class="btn btn-primary">Get Started</a>

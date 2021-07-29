@@ -169,13 +169,23 @@
         </tbody>
     </table>
 
-
-    <form id="bookTicketDiv" action="">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Book Seat
-        </button>
-    </form>
-      <a class="btn btn-default" href="{%url 'allTickets'%}">Checkout</a>
+    <div class="row">
+        <div class="col-md-6">
+            <form id="bookTicketDiv" action="">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Book Seat
+                </button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form>
+                <a class="btn btn-warning" href="{%url 'allTickets' %}">Checkout</a>
+            </form>
+        
+        </div>
+    </div>
+    
+  
 
 </div>
 
@@ -285,9 +295,9 @@
                         </div>
 
                     </div>
-                  
+
                     <form id="bookTicketDiv" action="{% url 'allTickets' %}" method="post">
-                        <button form="bookTicketDiv" type="submit" id="processRequest"> Book Seats </button>
+                        <button form="bookTicketDiv" type="submit" id="processRequest"> Book </button>
                     </form>
 
 

@@ -202,15 +202,26 @@ def ticket(request):
 def allTickets(request):
 
     current_time = localtime().time()
-
+    today = datetime.today()
+    currentDate = today.strftime('%d %B, %Y')
     print(current_time)
     user =request.user      
 
     ticketsList = Ticket.objects.filter(user=request.user).order_by('-id')
+    current_movie = Movie.objects.all()
+    theatres = Theatre.objects.all()
+    halls = Hall.objects.filter(theatre__id__in=theatres)
+    shows = Show.objects.all()
+
     print(user)
     context = {
         'Tickets': ticketsList,
         'current_time': current_time,
+        "movie": Movie.objects.get(),
+        "cities": City.objects.exclude(),
+        "today": currentDate,
+     
+        "shows": shows
         }
 
     return render(request, "tickets.html", context)
