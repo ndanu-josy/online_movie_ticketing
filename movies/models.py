@@ -19,7 +19,7 @@ class City(models.Model):
 #     pass
 
 class Theatre(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=255)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -34,8 +34,8 @@ class Hall(models.Model):
     ('IMAX', 'IMAX'),
     ]
 
-    name = models.CharField(max_length=30)
-    hall_type = models.CharField(max_length=4, choices=HALL_TYPES)
+    name = models.CharField(max_length=255)
+    hall_type = models.CharField(max_length=255, choices=HALL_TYPES)
     theatre = models.ForeignKey(Theatre, on_delete=models.CASCADE)
 
 
@@ -43,8 +43,9 @@ class Hall(models.Model):
         return f"[{self.name} |{self.hall_type}] - {self.theatre}"
 
 class Movie(models.Model):
-    name = models.CharField(max_length=30)
-    poster = models.URLField(max_length=500)
+    name = models.CharField(max_length=255)
+    poster = models.ImageField(upload_to='movies/', blank=True)
+    
     about = models.CharField(max_length=500)
 
     def __str__(self):
@@ -75,7 +76,9 @@ class Show(models.Model):
 
     HOUR_CHOICES = [(dt.time(hour=x), f'{y}') for x,y in [ (9, '9:00 AM'), (12, '12:00 PM'), (15, '3:00 PM'), (18, '6:00 PM'), (21, '9:00 PM')]]
     poster = models.ImageField(upload_to='shows/', blank=True)
+    trailer = models.URLField()
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    description =models.TextField(max_length=500)
     hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
     seats = models.IntegerField()
     date = models.DateField()
