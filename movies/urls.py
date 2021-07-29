@@ -17,7 +17,7 @@ urlpatterns=[
     path('seats/<int:show>', views.seats, name="seats"),
     path('ticket', views.ticket, name="ticket"),
     path('tickets', views.allTickets, name="allTickets"),
-   
+    url('search/', views.searchmovie, name='search'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

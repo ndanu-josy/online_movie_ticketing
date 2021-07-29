@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserModel
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
@@ -93,6 +94,24 @@ def results(request, query):
 def moviePage(request, movieName):
     return render(request, "movies/moviePage.html", {"movie": Movie.objects.get(name=movieName)})
 
+def searchmovie(request): 
+    if 'movie' in request.GET and request.GET['movie']:
+        name = request.GET.get("movie")
+        searchResults = Movie.search_movie(name)
+        message = f'name'
+        params = {
+            'results': searchResults,
+            'message': message
+        }
+        return render(request, 'search.html', params)
+    else:
+        message = "You haven't searched for any movie "
+    return render(request, 'search.html', {'message': message})
+
+
+
+
+
 def bookTicket(request, id):
 
     # current_city = request.user.city.name
@@ -185,12 +204,13 @@ def allTickets(request):
     current_time = localtime().time()
 
     print(current_time)
+    user =request.user      
 
     ticketsList = Ticket.objects.filter(user=request.user).order_by('-id')
-
+    print(user)
     context = {
         'Tickets': ticketsList,
         'current_time': current_time,
         }
 
-    return render(request, "movies/tickets.html", context)
+    return render(request, "tickets.html", context)

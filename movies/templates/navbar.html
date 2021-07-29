@@ -142,10 +142,10 @@
       <a class='btn btn-warning' href="/accounts/register">Register</a>
       {% endif %}
     </div>
-		<form class="navbar-form form-inline navbar-center ml-auto" action="/" style="padding-left: 200px;">
+		<form class="navbar-form form-inline navbar-center ml-auto" action="{%url 'search'%}" style="padding-left: 200px;">
 			<div class="input-group search-box">
-				<input type="text" class="form-control" name="business" placeholder="Search Movie"> 
-				<span class="input-group-addon"><i class="material-icons" style="font-size: 15px;">&#xE8B6;</i></span>
+				<input type="text" class="form-control" name="movie" placeholder="Search Movie"> 
+				<button type="submit" style="border: none;"><span class="input-group-addon" ><i class="material-icons" style="font-size: 15px;">&#xE8B6;</i></span></button>
 			</div>
 		</form>		
 	</div>

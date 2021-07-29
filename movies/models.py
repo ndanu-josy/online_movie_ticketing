@@ -51,6 +51,11 @@ class Movie(models.Model):
         return f"{self.name}"
 
 
+    @classmethod
+    def search_movie(cls, search_term):
+        movie = cls.objects.filter(name__icontains=search_term)
+        return movie
+
 def emptyAllSeats():
     seat_rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
