@@ -21,9 +21,10 @@
                     
 
                     <div class="col-md-3">
-                        <a href="/"><img src="{{ res.poster.url }}"
+                        <a href="/"><img src="{{res.image.url}}"
                                 style="width: 100%; height: 200px;" alt="movie"></a>
                         <div class="card-footer">
+                            <p>{{res.about}}</p>
                             <h2><a href="{%url 'showDetails' res.id%}">{{res.name}}</a></h2>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container"
     style="box-shadow: 0 0 50px lightgray; background-color: white; border-radius: 1%; margin-top: 50px;">
-    <h2 class="text-center" style="color: goldenrod;"> {{ show.title }}</h2>
+    <h2 class="text-center" style="color: goldenrod;"> {{ show.movie }}</h2>
     <hr>
     <div class="col-md-5">
         <div class="card-body " style="border-radius: 1%;  ">
@@ -22,7 +22,7 @@
     <div class="col-md-5" style="margin-top: 80px;">
 
        
-
+    <p>{{show.description}}</p>
         <a href="{{show.trailer}}"class="btn btn-danger">Watch Trailer</a>
        
         <form id="bookTicketPage" action="{% url 'book_seat' show.id %}" method="GET">

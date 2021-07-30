@@ -44,7 +44,7 @@ class Hall(models.Model):
 
 class Movie(models.Model):
     name = models.CharField(max_length=255)
-    poster = models.ImageField(upload_to='movies/', blank=True)
+    image = models.ImageField(upload_to='movies/', blank=True)
     
     about = models.CharField(max_length=500)
 
@@ -80,7 +80,7 @@ class Show(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     description =models.TextField(max_length=500)
     hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
-    seats = models.IntegerField()
+    seats = models.JSONField()
     date = models.DateField()
     time = models.TimeField(choices=HOUR_CHOICES)
     rate = models.IntegerField()
